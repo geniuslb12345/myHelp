@@ -1,0 +1,42 @@
+<?xml  version="1.0"  encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping  PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="com.myHelp.entity">
+
+  <class  name="Ticket"  table="ticket" >
+  
+  <id name="ticket_id"  type="java.lang.Integer">
+  <generator class="native"/>
+  </id>
+  
+  <property name="ticket_creator_name"  type="java.lang.String">
+  <column name="ticket_creator_name" length="64"/>
+  </property>
+  
+  <property name="ticket_title"  type="java.lang.String">
+  <column name="ticket_title" length="64"/>
+  </property>
+  
+  <property name="ticket_problem_description"  type="java.lang.String">
+  <column name="ticket_problem_description" length="64"/>
+  </property>
+  
+  <property name="ticket_status" type="java.lang.Integer">
+  <column name="ticket_status" length="3"/>
+  </property>
+  
+ 
+  <property name="ticket_create_date" type="java.util.Date">
+  <column  name="ticket_create_date"/>
+  </property>
+  
+  <property name="ticket_priority" type="java.lang.Integer">
+  <column name="ticket_priority" length="3"/>
+  </property>
+  
+  
+    
+  </class>
+
+</hibernate-mapping>

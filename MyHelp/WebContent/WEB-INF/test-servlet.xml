@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:p="http://www.springframework.org/schema/p" 
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:util="http://www.springframework.org/schema/util"
+  xmlns:mvc="http://www.springframework.org/schema/mvc"
+  xsi:schemaLocation="
+  http://www.springframework.org/schema/beans
+  http://www.springframework.org/schema/beans/spring-beans.xsd
+  http://www.springframework.org/schema/util
+  http://www.springframework.org/schema/util/spring-util.xsd
+  http://www.springframework.org/schema/context 
+  http://www.springframework.org/schema/context/spring-context.xsd
+  http://www.springframework.org/schema/tx
+  http://www.springframework.org/schema/tx/spring-tx-2.5.xsd
+  http://www.springframework.org/schema/mvc
+  http://www.springframework.org/schema/mvc/spring-mvc.xsd" >
+
+
+  <bean class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+    <property name="mappings"> 
+      <props>
+   
+        <prop key="add_ticket.test">addTicketController</prop>
+        <prop key="show_ticket.test">showTicketController</prop>
+        <prop key="addticketSucc.test">addTicketSuccController</prop>
+        <prop key="showticketlist.test">showTicketListController</prop>
+        <prop key="delete_ticket.test">deleteTicketController</prop>
+        <prop key="update_ticket.test">updateTicketController</prop>
+        <prop key="deletetkt.test">deleteController</prop>   
+        <prop key="updatedelete.test">updatedeleteController</prop> 
+           
+        <prop key="updatetkt.test">updatetktController</prop> 
+           
+        <prop key="updatesuccess.test">updatesuccessController</prop> 
+           
+        <prop key="main.test">mainController</prop>
+   
+        <prop key="updatefinish.test">updatefinishController</prop>
+   
+   
+        
+      </props>    
+    </property>
+  </bean>
+
+
+<bean id="updatefinishController" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+
+
+<bean id="updateTicketController" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+
+<bean id="deleteTicketController" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+<bean id="addTicketController" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+<bean id="showTicketController" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+<bean id="mainController" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+
+<bean id="updatetktController" class="org.springframework.web.servlet.mvc.UrlFilenameViewController"/>
+
+
+
+
+
+<bean  id="updatesuccessController" class="com.myHelp.controller.updateTicketController">
+         <property name="commandClass"  value="com.myHelp.entity.Ticket"/>
+</bean>
+
+<bean  id="updatedeleteController" class="com.myHelp.controller.updateController">
+         <property name="commandClass"  value="com.myHelp.entity.Ticket"/>
+</bean>
+
+<bean  id="addTicketSuccController" class="com.myHelp.controller.TicketController">
+         <property name="commandClass"  value="com.myHelp.entity.Ticket"/>
+</bean>
+
+
+
+
+
+<bean  id="deleteController" class="com.myHelp.controller.deleteController">
+         <property name="commandClass"  value="com.myHelp.entity.Ticket"/>
+</bean>
+
+
+<bean  id="showTicketListController" class="com.myHelp.controller.showTicketListController">
+         <property name="commandClass"  value="com.myHelp.entity.Ticket"/>
+</bean>
+
+
+<bean class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+ <property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>
+ <property name="prefix" value="/WEB-INF/jsp/"/>
+ <property name="suffix" value=".jsp"/>
+</bean>
+
+</beans>
